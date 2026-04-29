@@ -2,7 +2,7 @@
 /target/
 native/target/
 **/*.rs.bk
-Cargo.lock
+# Cargo.lock is intentionally tracked to guarantee reproducible CI builds
 
 # Python
 __pycache__/
