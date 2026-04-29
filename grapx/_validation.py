@@ -9,8 +9,6 @@ and provides clear error messages when invalid parameters are passed.
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Field, field_validator
 
 
@@ -37,7 +35,7 @@ class PageRankParams(_BaseConfig):
         gt=0.0,
         description="L1 convergence tolerance",
     )
-    weight: Optional[str] = Field(
+    weight: str | None = Field(
         default="weight",
         description="Edge attribute to use as weight (None = unweighted)",
     )
@@ -46,18 +44,18 @@ class PageRankParams(_BaseConfig):
 class ShortestPathParams(_BaseConfig):
     """Validation model for shortest_path() / shortest_path_length() parameters."""
 
-    weight: Optional[str] = Field(
+    weight: str | None = Field(
         default=None,
         description="Edge attribute to use as distance (None = hop count)",
     )
-    method: Optional[str] = Field(
+    method: str | None = Field(
         default=None,
         description="Algorithm hint ('dijkstra' only in v0.1)",
     )
 
     @field_validator("method")
     @classmethod
-    def method_check(cls, v: Optional[str]) -> Optional[str]:
+    def method_check(cls, v: str | None) -> str | None:
         if v is not None and v not in ("dijkstra", "bellman-ford"):
             raise ValueError(
                 f"method must be 'dijkstra' or 'bellman-ford', got {v!r}"
@@ -72,7 +70,7 @@ class CentralityParams(_BaseConfig):
         default=True,
         description="Whether to normalize values to [0, 1]",
     )
-    weight: Optional[str] = Field(
+    weight: str | None = Field(
         default=None,
         description="Edge attribute to use as weight",
     )

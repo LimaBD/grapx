@@ -11,7 +11,6 @@ Centrality measures.
 from __future__ import annotations
 
 import collections
-from typing import Optional
 
 from grapx._validation import validate_centrality_params
 
@@ -45,7 +44,7 @@ def degree_centrality(G) -> dict:
 def betweenness_centrality(
     G,
     normalized: bool = True,
-    weight: Optional[str] = None,
+    weight: str | None = None,
     endpoints: bool = False,
 ) -> dict:
     """
@@ -118,7 +117,7 @@ def betweenness_centrality(
     return betweenness
 
 
-def closeness_centrality(G, u=None, distance: Optional[str] = None, wf_improved: bool = True) -> dict:
+def closeness_centrality(G, u=None, distance: str | None = None, wf_improved: bool = True) -> dict:
     """
     Compute closeness centrality for all nodes (or a single node *u*).
 

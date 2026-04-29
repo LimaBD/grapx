@@ -8,8 +8,6 @@ pure-Python implementations.
 
 from __future__ import annotations
 
-from typing import Optional
-
 from grapx._validation import validate_pagerank_params
 
 try:
@@ -28,7 +26,7 @@ def pagerank(
     max_iter: int = 100,
     tol: float = 1.0e-6,
     nstart=None,
-    weight: Optional[str] = "weight",
+    weight: str | None = "weight",
     dangling=None,
 ) -> dict:
     """
