@@ -45,7 +45,7 @@ run PageRank in seconds instead of minutes, and keep your existing code unchange
 
 ```python
 # Before
-import <your_graph_lib> as gx
+import grapx as gx
 
 # After — that's it
 import grapx as gx
