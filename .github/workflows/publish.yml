@@ -66,7 +66,7 @@ jobs:
         with:
           target: ${{ matrix.target }}
           manylinux: ${{ matrix.manylinux }}
-          args: --release --out dist --manifest-path native/Cargo.toml --locked
+          args: --release --out dist --locked
           sccache: "true"
 
       - name: Upload wheel artifact
@@ -86,7 +86,7 @@ jobs:
         uses: PyO3/maturin-action@v1
         with:
           command: sdist
-          args: --out dist --manifest-path native/Cargo.toml
+          args: --out dist
 
       - name: Upload sdist artifact
         uses: actions/upload-artifact@v4

@@ -112,7 +112,7 @@ jobs:
         run: pip install "maturin>=1.5,<2.0"
 
       - name: Build grapx wheel
-        run: maturin build --release --out dist --manifest-path native/Cargo.toml --locked
+        run: maturin build --release --out dist --locked
 
       - name: Install test dependencies
         run: pip install pytest pytest-cov "pydantic>=2.0"
@@ -160,7 +160,7 @@ jobs:
         run: pip install "maturin>=1.5,<2.0"
 
       - name: Build grapx wheel (release)
-        run: maturin build --release --out dist --manifest-path native/Cargo.toml --locked
+        run: maturin build --release --out dist --locked
 
       - name: Install grapx wheel
         run: pip install --no-index --find-links dist/ grapx
