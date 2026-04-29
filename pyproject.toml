@@ -57,4 +57,12 @@ target-version = "py38"
 
 [tool.ruff.lint]
 select = ["E", "F", "UP", "B", "SIM", "I"]
-ignore = ["E501"]
+ignore = [
+    "E501",
+    # UP007/UP045: suggest `X | None` / `X | Y` union syntax (PEP 604).
+    # Cannot use: Pydantic v2 evaluates field annotations at class construction
+    # time via eval(), which rejects the `|` operator on Python 3.8 even when
+    # `from __future__ import annotations` is present.
+    "UP007",
+    "UP045",
+]
