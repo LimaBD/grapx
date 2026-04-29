@@ -1,0 +1,5 @@
+# Allow building PyO3 extensions against Python versions newer than what
+# PyO3 explicitly knows about, using the stable ABI (abi3).
+# Required when the host Python (e.g. 3.14) is ahead of PyO3's max known version.
+[env]
+PYO3_USE_ABI3_FORWARD_COMPATIBILITY = "1"
