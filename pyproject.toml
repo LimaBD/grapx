@@ -46,7 +46,9 @@ Changelog = "https://github.com/LimaBD/grapx/blob/main/CHANGELOG.md"
 [tool.maturin]
 manifest-path = "native/Cargo.toml"
 module-name = "grapx._core"
-python-source = "."
+# Python source lives under src/ (prevents source-tree from shadowing the
+# installed wheel when running tests from the project root)
+python-source = "src"
 features = ["pyo3/extension-module"]
 
 [tool.pytest.ini_options]
