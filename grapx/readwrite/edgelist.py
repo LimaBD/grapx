@@ -7,6 +7,7 @@ Read and write graphs as edge lists (CSV / space-delimited text).
 from __future__ import annotations
 
 import contextlib
+from typing import Optional
 
 from grapx.classes.graph import Graph
 
@@ -14,7 +15,7 @@ from grapx.classes.graph import Graph
 def read_edgelist(
     path,
     comments: str = "#",
-    delimiter: str | None = None,
+    delimiter: Optional[str] = None,
     create_using=None,
     nodetype=None,
     data=True,

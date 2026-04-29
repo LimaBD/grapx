@@ -7,6 +7,7 @@ Classic graph generators — no external dependencies required.
 from __future__ import annotations
 
 import random
+from typing import Optional
 
 from grapx.classes.digraph import DiGraph
 from grapx.classes.graph import Graph
@@ -58,7 +59,7 @@ def karate_club_graph() -> Graph:
 # ─── Random graph generators ────────────────────────────────────────────────
 
 
-def barabasi_albert_graph(n: int, m: int, seed: int | None = None) -> Graph:
+def barabasi_albert_graph(n: int, m: int, seed: Optional[int] = None) -> Graph:
     """
     Barabási–Albert preferential-attachment graph.
 
@@ -100,7 +101,7 @@ def barabasi_albert_graph(n: int, m: int, seed: int | None = None) -> Graph:
 
 
 def erdos_renyi_graph(
-    n: int, p: float, seed: int | None = None, directed: bool = False
+    n: int, p: float, seed: Optional[int] = None, directed: bool = False
 ) -> Graph:
     """
     Erdős–Rényi G(n, p) random graph.
@@ -137,7 +138,7 @@ def erdos_renyi_graph(
     return G
 
 
-def watts_strogatz_graph(n: int, k: int, p: float, seed: int | None = None) -> Graph:
+def watts_strogatz_graph(n: int, k: int, p: float, seed: Optional[int] = None) -> Graph:
     """
     Watts–Strogatz small-world graph.
 
