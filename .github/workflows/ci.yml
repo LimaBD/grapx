@@ -118,7 +118,7 @@ jobs:
         run: pip install pytest pytest-cov "pydantic>=2.0"
 
       - name: Install grapx wheel
-        run: pip install --no-index --find-links dist/ grapx
+        run: pip install --no-index --find-links dist/ --no-deps grapx
 
       - name: Run tests
         run: python -m pytest tests/ -v --tb=short --cov=grapx --cov-report=xml
@@ -162,8 +162,11 @@ jobs:
       - name: Build grapx wheel
         run: maturin build --release --out dist
 
+      - name: Install benchmark dependencies
+        run: pip install "pydantic>=2.0"
+
       - name: Install grapx wheel
-        run: pip install --no-index --find-links dist/ grapx
+        run: pip install --no-index --find-links dist/ --no-deps grapx
 
       - name: Run benchmarks
         run: python tests/bench.py
