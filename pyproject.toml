@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "grapx"
-version = "0.1.0"
+version = "1.0.0"
 description = "High-performance graph computing with a zero-learning-curve Python API and a Rust core"
 readme = "README.md"
 license = { file = "LICENSE" }
