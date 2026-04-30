@@ -41,7 +41,7 @@ jobs:
             target: aarch64-unknown-linux-gnu
             manylinux: auto
           # macOS x86_64
-          - runner: macos-13
+          - runner: macos-14
             target: x86_64-apple-darwin
             manylinux: "off"
           # macOS ARM (M1/M2/M3)
