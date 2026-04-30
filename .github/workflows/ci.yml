@@ -64,7 +64,7 @@ jobs:
       - name: Python lint (ruff)
         run: |
           pip install ruff
-          ruff check grapx/ tests/
+          ruff check src/grapx/ tests/
 
   # ─── Python tests ─────────────────────────────────────────────────────────────────────
   python-tests:
